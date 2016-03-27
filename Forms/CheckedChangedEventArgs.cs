@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Core
+// Assembly         : Messier16.Forms.Controls
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 
-// Last Modified By : XLabs Team
-// Last Modified On : 01-04-2016
+// Last Modified By : Antonio Feregrino
+// Last Modified On : 03-27-2016
 // ***********************************************************************
 // <copyright file="EventArgs{T}.cs" company="XLabs Team">
 //     Copyright (c) XLabs Team. All rights reserved.

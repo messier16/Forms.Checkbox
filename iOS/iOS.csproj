@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Messier16.Forms.iOS.Controls</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Messier16.Forms.Controls</AssemblyName>
+    <AssemblyName>Messier16.Forms.iOS.Controls</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

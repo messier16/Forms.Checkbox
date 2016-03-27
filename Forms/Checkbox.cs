@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Forms
+// Assembly         : Messier16.Forms.Controls
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 

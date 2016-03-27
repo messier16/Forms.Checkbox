@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : Messier16.Forms.Controls
+// Assembly         : Messier16.Forms.Droid.Controls
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 
@@ -25,6 +25,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Messier16.Forms.Controls;
 using Messier16.Forms.Droid.Controls;
+using System;
 
 [assembly: ExportRenderer(typeof(Checkbox), typeof(CheckboxRenderer))]
 namespace Messier16.Forms.Droid.Controls
@@ -34,6 +35,13 @@ namespace Messier16.Forms.Droid.Controls
     /// </summary>
     public class CheckboxRenderer : ViewRenderer<Checkbox, Android.Widget.CheckBox>
     {
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public static void Init()
+        {
+            var temp = DateTime.Now;
+        }
 
         /// <summary>
         /// Called when [element changed].
@@ -48,6 +56,12 @@ namespace Messier16.Forms.Droid.Controls
                 var checkBox = new Android.Widget.CheckBox(this.Context);
                 checkBox.CheckedChange += CheckBoxCheckedChange;
                 SetNativeControl(checkBox);
+            }
+
+            if (e.NewElement != null)
+            {
+                Control.Checked = e.NewElement.Checked;
+                Control.Enabled = e.NewElement.IsEnabled;
             }
         }
 

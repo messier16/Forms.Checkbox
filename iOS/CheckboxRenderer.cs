@@ -18,6 +18,14 @@ namespace Messier16.Forms.iOS.Controls
     /// </summary>
     public class CheckboxRenderer : ViewRenderer<Checkbox, UICheckbox>
     {
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public new static void Init()
+        {
+            var temp = DateTime.Now;
+        }
+        
         private CGRect _originalBounds;
 
         /// <summary>
