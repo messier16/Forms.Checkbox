@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Messier16.Forms.iOS.Controls;
 using UIKit;
 
 namespace CheckboxTestApp.iOS
@@ -13,6 +14,8 @@ namespace CheckboxTestApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            CheckboxRenderer.Init();
 
             LoadApplication(new App());
 

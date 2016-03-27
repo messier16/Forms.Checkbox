@@ -78,6 +78,14 @@
       <Project>{DD640D2F-80EC-49CA-9BAD-4781E91B67F1}</Project>
       <Name>CheckboxTestApp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Droid\Droid.csproj">
+      <Project>{EAB29EC2-1B7C-44DA-A027-A02528E93151}</Project>
+      <Name>Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Forms\Forms.csproj">
+      <Project>{770BCDAD-C70F-4EE3-B4C1-7276D1AF1D6E}</Project>
+      <Name>Forms</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

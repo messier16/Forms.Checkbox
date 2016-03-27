@@ -19,12 +19,12 @@ namespace CheckboxTestApp
             cb1.CheckedChanged += 
                 (sender, e) =>
             { 
-                    cb2.IsEnabled = e.Value;
+                    cb2.IsEnabled = e.IsChecked;
                     cb3.Checked = !cb1.Checked;
             };
 
             cb2.CheckedChanged +=
-                (sender, e) => cb4.IsVisible = e.Value;
+                (sender, e) => cb4.IsVisible = e.IsChecked;
 
             var items = Enumerable.Range(0, 30)
                 .Select(i => new { 

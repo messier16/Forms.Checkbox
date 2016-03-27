@@ -97,6 +97,14 @@
       <Project>{DD640D2F-80EC-49CA-9BAD-4781E91B67F1}</Project>
       <Name>CheckboxTestApp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Forms\Forms.csproj">
+      <Project>{770BCDAD-C70F-4EE3-B4C1-7276D1AF1D6E}</Project>
+      <Name>Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iOS\iOS.csproj">
+      <Project>{C4DD6C3C-9AC5-4ADF-A82C-D09460204912}</Project>
+      <Name>iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
