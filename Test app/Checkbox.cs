@@ -33,11 +33,38 @@ namespace Messier16.Forms.Controls
         /// The checked state property.
         /// </summary>
         public static readonly BindableProperty CheckedProperty =
-            BindableProperty.Create ("Checked", 
-                typeof(bool), 
-                typeof(Checkbox), 
-                false, BindingMode.TwoWay,propertyChanged: OnCheckedPropertyChanged);
+            BindableProperty.Create("Checked",
+                typeof(bool),
+                typeof(Checkbox),
+                false, BindingMode.TwoWay, propertyChanged: OnCheckedPropertyChanged);
 
+#if DEBUG
+        /// <summary>
+        /// The checked state property.
+        /// </summary>
+        public static readonly BindableProperty TestProperty =
+            BindableProperty.Create("Test",
+                typeof(string),
+                typeof(Checkbox),
+                "Test", BindingMode.TwoWay);
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the control is checked.
+        /// </summary>
+        /// <value>The checked state.</value>
+        public string Test
+        {
+            get
+            {
+                return (string)GetValue(TestProperty);
+            }
+
+            set
+            {
+                SetValue(TestProperty, value);
+            }
+        }
+#endif
 
         /// <summary>
         /// Gets or sets a value indicating whether the control is checked.
@@ -52,9 +79,10 @@ namespace Messier16.Forms.Controls
 
             set
             {
-                if(this.Checked != value) {
+                if (this.Checked != value)
+                {
                     SetValue(CheckedProperty, value);
-                    if(CheckedChanged != null)
+                    if (CheckedChanged != null)
                         CheckedChanged.Invoke(this, new EventArgs<bool>(value));
                 }
             }
@@ -73,7 +101,7 @@ namespace Messier16.Forms.Controls
         /// <param name="newvalue">if set to <c>true</c> [newvalue].</param>
         private static void OnCheckedPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
-            var checkBox = (Checkbox) bindable;
+            var checkBox = (Checkbox)bindable;
             checkBox.Checked = (bool)newvalue;
         }
     }

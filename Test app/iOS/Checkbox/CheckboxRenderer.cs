@@ -18,6 +18,7 @@ namespace Messier16.Forms.iOS.Controls
     /// </summary>
     public class CheckboxRenderer : ViewRenderer<Checkbox, UICheckbox>
     {
+        private CGRect _originalBounds;
 
         /// <summary>
         /// Handles the Element Changed event
@@ -25,7 +26,6 @@ namespace Messier16.Forms.iOS.Controls
         /// <param name="e">The e.</param>
         protected override void OnElementChanged(ElementChangedEventArgs<Checkbox> e)
         {
-
             base.OnElementChanged(e);
 
             if (Element == null)
@@ -39,17 +39,23 @@ namespace Messier16.Forms.iOS.Controls
                     var checkBox = new UICheckbox();
                     checkBox.CheckedChanged += (s, args) => Element.Checked = args.Checked;
                     SetNativeControl(checkBox);
+
+                    // Issue with list rendering
+                    _originalBounds = checkBox.Bounds;
                 }
-                Control.SetCheckState(e.NewElement.Checked 
+                Control.SetCheckState(e.NewElement.Checked
                     ? CheckState.Checked : CheckState.Unchecked);
                 Control.SetEnabled(e.NewElement.IsEnabled);
-//                Control.Hidden = e.NewElement.IsVisible;
+                Control.Bounds = _originalBounds;
             }
-
-            //            Control.Frame = Frame;
-            //            Control.Bounds = Bounds;
         }
 
+#if DEBUG
+        private string GetBounds(CGRect rect)
+        {
+            return String.Format(" X:{0} Y:{1} H:{2} W:{3}", rect.X, rect.Y, rect.Height, rect.Width);
+        }
+#endif
 
         //        /// <summary>
         //        /// Draws the specified rect.
@@ -65,9 +71,9 @@ namespace Messier16.Forms.iOS.Controls
             base.OnElementPropertyChanged(sender, e);
             switch (e.PropertyName)
             {
-                case "IsVisible":
-                    Control.Hidden = Element.IsVisible;
-                    break;
+                //case "IsVisible":
+                //    Control.Hidden = Element.IsVisible;
+                //    break;
                 case "IsEnabled":
                     Control.SetEnabled(Element.IsEnabled);
                     break;

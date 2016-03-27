@@ -41,6 +41,10 @@ namespace CheckboxTestApp
             selectableList.ItemTemplate.SetBinding(SelectableCell.TextProperty, "Text");
             selectableList.ItemTemplate.SetBinding(SelectableCell.CheckboxEnabledProperty, "Selectable");
             selectableList.ItemTemplate.SetBinding(SelectableCell.CheckboxVisibleProperty, "Visible");
+#if DEBUG
+            selectableList.ItemTemplate.SetBinding(SelectableCell.TestProperty, "Text");
+#endif
+
             var checkboxes = new StackLayout
             {
                 VerticalOptions = LayoutOptions.Center,
