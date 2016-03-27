@@ -65,9 +65,9 @@ namespace Messier16.Forms.iOS.Controls
             base.OnElementPropertyChanged(sender, e);
             switch (e.PropertyName)
             {
-//                case "IsVisible":
-//                    Control.Hidden = Element.IsVisible;
-//                    break;
+                case "IsVisible":
+                    Control.Hidden = Element.IsVisible;
+                    break;
                 case "IsEnabled":
                     Control.SetEnabled(Element.IsEnabled);
                     break;

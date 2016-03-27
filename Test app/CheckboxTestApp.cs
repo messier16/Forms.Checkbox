@@ -2,6 +2,7 @@
 
 using Xamarin.Forms;
 using Messier16.Forms.Controls;
+using System.Linq;
 
 namespace CheckboxTestApp
 {
@@ -13,47 +14,61 @@ namespace CheckboxTestApp
             var cb1 = new Checkbox();
             var cb2 = new Checkbox() { IsEnabled = false };
             var cb3 = new Checkbox() { Checked = true };
-            var cb4 = new Checkbox() { IsVisible = false };
+            var cb4 = new Checkbox() { };
 
             cb1.CheckedChanged += 
                 (sender, e) =>
             { 
                     cb2.IsEnabled = e.Value;
                     cb3.Checked = !cb1.Checked;
-                    cb4.IsVisible = cb2.Checked;
+            };
+
+            cb2.CheckedChanged +=
+                (sender, e) => cb4.IsVisible = e.Value;
+
+            var items = Enumerable.Range(0, 30)
+                .Select(i => new { 
+                    Text = "Item " + i,
+                    Selectable = i % 2 == 0,
+                    Visible = i % 2 == 0
+                });
+            
+            var selectableList = new ListView(){
+                ItemsSource = items
+            };
+
+            selectableList.ItemTemplate = new DataTemplate(typeof(SelectableCell));
+            selectableList.ItemTemplate.SetBinding(SelectableCell.TextProperty, "Text");
+            selectableList.ItemTemplate.SetBinding(SelectableCell.CheckboxEnabledProperty, "Selectable");
+            selectableList.ItemTemplate.SetBinding(SelectableCell.CheckboxVisibleProperty, "Visible");
+            var checkboxes = new StackLayout
+            {
+                VerticalOptions = LayoutOptions.Center,
+                    Orientation = StackOrientation.Horizontal,
+                Children =
+                {
+                    cb1,
+                    cb2,
+                    cb3,
+                    cb4
+                }
             };
 
             // The root page of your application
-            MainPage = new ContentPage
+            MainPage = new NavigationPage( new ContentPage
             {
                 Content = new StackLayout
                 {
                     VerticalOptions = LayoutOptions.Center,
                     Children =
                     {
-                                    cb1,
-                                    cb2,
-                                    cb3,
-                                    cb4
+                        checkboxes,
+                        selectableList
                     }
                 }
-            };
+                });
         }
 
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
-        }
     }
 }
 
