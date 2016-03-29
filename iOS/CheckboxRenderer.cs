@@ -45,6 +45,7 @@ namespace Messier16.Forms.iOS.Controls
                 if (Control == null)
                 {
                     var checkBox = new UICheckbox();
+                    checkBox.Bounds = new CGRect(0, 0, Element.Width, Element.Height);
                     checkBox.CheckedChanged += (s, args) => Element.Checked = args.Checked;
                     SetNativeControl(checkBox);
 
