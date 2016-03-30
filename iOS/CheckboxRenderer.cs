@@ -16,7 +16,7 @@ namespace Messier16.Forms.iOS.Controls
     /// <summary>
     /// The check box renderer for iOS.
     /// </summary>
-    public class CheckboxRenderer : ViewRenderer<Checkbox, M13Checkbox>
+    public class CheckboxRenderer : ViewRenderer<Checkbox, UICheckbox>
     {
         /// <summary>
         /// Used for registration with dependency service
@@ -44,12 +44,8 @@ namespace Messier16.Forms.iOS.Controls
             {
                 if (Control == null)
                 {
-<<<<<<< HEAD:Test app/iOS/Checkbox/CheckboxRenderer.cs
-                    var checkBox = new M13Checkbox();
-=======
                     var checkBox = new UICheckbox();
                     checkBox.Bounds = new CGRect(0, 0, Element.Width, Element.Height);
->>>>>>> origin/master:iOS/CheckboxRenderer.cs
                     checkBox.CheckedChanged += (s, args) => Element.Checked = args.Checked;
                     SetNativeControl(checkBox);
 

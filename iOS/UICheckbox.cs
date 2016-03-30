@@ -16,7 +16,7 @@ namespace Messier16.Forms.iOS.Controls
 
 
         public UICheckbox()
-            :this( new CGRect(0, 0, Constants.DefaultHeight, Constants.DefaultHeight))
+            :this( new CGRect(0, 0, Constants.CheckboxDefaultHeight, Constants.CheckboxDefaultHeight))
         {
         }
 
@@ -105,7 +105,7 @@ namespace Messier16.Forms.iOS.Controls
 
             CheckView = new CheckView(checkViewFrame);
             CheckView.Checkbox = this;
-            CheckView.IsSelected = false;
+            CheckView.Selected = false;
             CheckView.BackgroundColor = UIColor.Clear;
             CheckView.ClipsToBounds = false;
             CheckView.UserInteractionEnabled = false;
