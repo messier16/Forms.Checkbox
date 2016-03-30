@@ -6,9 +6,9 @@
        <title>Checkbox Control Plugin for Xamarin.Forms</title>
        <authors>Antonio Feregrino Bolaños</authors>
        <owners>Antonio Feregrino Bolaños</owners>
-       <licenseUrl>https://github.com/jamesmontemagno/Xamarin.Plugins/blob/master/LICENSE.md</licenseUrl>
+       <licenseUrl>https://github.com/fferegrino/Forms.Checkbox/blob/master/LICENSE</licenseUrl>
        <projectUrl>https://github.com/fferegrino/Forms.Checkbox</projectUrl>
-      <iconUrl>http://www.refractored.com/images/circle_image_icon.png</iconUrl>
+      <iconUrl>http://thatcsharpguy.com/assets/nuget/Forms.Checkbox.png</iconUrl>
        <requireLicenseAcceptance>false</requireLicenseAcceptance>
        <description>
            Custom control for your Xamarin.Forms project ot turn your images into elegant circle images.
