@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.8.1">
        <id>Messier16.Forms.Checkbox</id>
-       <version>0.0.3</version>
+       <version>0.1.0-alpha</version>
        <title>Checkbox Control Plugin for Xamarin.Forms</title>
        <authors>Antonio Feregrino Bolaños</authors>
        <owners>Antonio Feregrino Bolaños</owners>
@@ -11,13 +11,12 @@
       <iconUrl>http://thatcsharpguy.com/assets/nuget/Forms.Checkbox.png</iconUrl>
        <requireLicenseAcceptance>false</requireLicenseAcceptance>
        <description>
-           Custom control for your Xamarin.Forms project ot turn your images into elegant circle images.
-           Customizable border thickness and color.
-           Ensure you call ImageCircleRenderer.Init() on each platform!
+           Custom control for your Xamarin.Forms that allow you to use a checkbox in your cross platform projects.
+           Ensure you call CheckboxRenderer.Init(); on each platform!
            Built against: 2.0.0.0
        </description>
-       <summary>Use a Circle Image in your Xamarin.Forms projects! Ensure you call ImageCircleRenderer.Init() on each platform!</summary>
-       <tags>xamarin, pcl, xam.pcl, uwp, uwa, windows phone, winphone, wp8, android, xamarin.forms, ios</tags>
+       <summary>Use a checkbox in your Xamarin.Forms projects! Ensure you call CheckboxRenderer.Init() on each platform!</summary>
+       <tags>xamarin, pcl, xam.pcl, android, xamarin.forms, ios</tags>
        <dependencies>
          <dependency id="Xamarin.Forms" version="2.0.0.0" />
        </dependencies>
