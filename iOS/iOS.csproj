@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UICheckbox.cs" />
+    <Compile Include="M13Checkbox.cs" />
     <Compile Include="CheckView.cs" />
     <Compile Include="Misc.cs" />
     <Compile Include="CheckedChangedEventArgs.cs" />
