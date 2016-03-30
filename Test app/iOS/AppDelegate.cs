@@ -5,6 +5,7 @@ using System.Linq;
 using Foundation;
 using Messier16.Forms.iOS.Controls;
 using UIKit;
+using Xamarin.Forms;
 
 namespace CheckboxTestApp.iOS
 {
@@ -16,6 +17,17 @@ namespace CheckboxTestApp.iOS
             global::Xamarin.Forms.Forms.Init();
 
             CheckboxRenderer.Init();
+#if ENABLE_TEST_CLOUD
+            Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
+                // http://developer.xamarin.com/recipes/testcloud/set-accessibilityidentifier-ios/
+                if (null != e.View.StyleId)
+                {
+                    e.NativeView.AccessibilityIdentifier = e.View.StyleId;
+                }
+            };
+            // requires Xamarin Test Cloud Agent
+            Xamarin.Calabash.Start();
+#endif
 
             LoadApplication(new App());
 
