@@ -26,19 +26,24 @@ namespace Messier16.Forms.iOS.Controls
             // General Declarations
             using (var colorSpace = CGColorSpace.CreateDeviceRGB())
             {
-                CGContext context = UIGraphics.GetCurrentContext();
+                //CGContext context = UIGraphics.GetCurrentContext();
 
                 // Set area
                 CGRect boxRect = new CGRect(Checkbox.StrokeWidth, 
-                                 (Frame.Size.Height * Constants.CheckVerticalExtension), 
-                                 (Frame.Size.Height * Constants.BoxSize) - Checkbox.StrokeWidth, 
-                                 (Frame.Size.Height * Constants.BoxSize) - Checkbox.StrokeWidth);
+                    (Frame.Size.Height * Constants.CheckVerticalExtension), 
+                    (Frame.Size.Height * Constants.BoxSize) - Checkbox.StrokeWidth, 
+                    (Frame.Size.Height * Constants.BoxSize) - Checkbox.StrokeWidth);
 
                 UIColor fillColor = null;
                 UIColor strokeColor = null;
                 UIColor checkColor = null;
 
+<<<<<<< HEAD:Test app/iOS/Checkbox/CheckView.cs
                 if (Checkbox.CheckState == CheckState.Unchecked) {
+=======
+                if (Checkbox.CheckState == CheckboxState.Unchecked)
+                {
+>>>>>>> origin/master:iOS/CheckView.cs
                     fillColor = Checkbox.UncheckedColor;
                 } else {
                     fillColor = Checkbox.TintColor;
@@ -86,22 +91,22 @@ namespace Messier16.Forms.iOS.Controls
 
                 switch (Checkbox.CheckState)
                 {
-                    case CheckState.Unchecked:
+                    case CheckboxState.Unchecked:
                         break;
-                    case CheckState.Checked:
+                    case CheckboxState.Checked:
                         checkColor.SetFill();
                         Checkbox.DefaultShape.Fill();
                         break;
-//                    case CheckState.Mixed:
-//                        var rct = new CGRect(
-//                                  Checkbox.StrokeWidth + ((boxRect.Size.Width - (0.5 * Frame.Size.Height)) * 0.5), 
-//                                  (Frame.Size.Height * .5) - ((0.09375 * Frame.Size.Height) * .5),
-//                                  0.5 * Frame.Size.Height,
-//                                  0.1875 * Frame.Size.Height);
-//                        UIBezierPath mixedPath = UIBezierPath.FromRoundedRect(rct, (System.nfloat)(0.09375 * Frame.Size.Height));
-//                        checkColor.SetFill();
-//                        mixedPath.Fill();
-//                        break;
+                        //                    case CheckState.Mixed:
+                        //                        var rct = new CGRect(
+                        //                                  Checkbox.StrokeWidth + ((boxRect.Size.Width - (0.5 * Frame.Size.Height)) * 0.5), 
+                        //                                  (Frame.Size.Height * .5) - ((0.09375 * Frame.Size.Height) * .5),
+                        //                                  0.5 * Frame.Size.Height,
+                        //                                  0.1875 * Frame.Size.Height);
+                        //                        UIBezierPath mixedPath = UIBezierPath.FromRoundedRect(rct, (System.nfloat)(0.09375 * Frame.Size.Height));
+                        //                        checkColor.SetFill();
+                        //                        mixedPath.Fill();
+                        //                        break;
 
                 }
             }

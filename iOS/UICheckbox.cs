@@ -5,27 +5,28 @@ using Foundation;
 using CoreGraphics;
 using UIKit;
 using System.Diagnostics;
-y¿
 
 namespace Messier16.Forms.iOS.Controls
 {
 
-    [Register("M13Checkbox")]
-    public class M13Checkbox : UIControl
+    [Register("UICheckbox")]
+    public class UICheckbox : UIControl
     {
 
-        public M13Checkbox()
-            :this(new CGRect(0, 0, Constants.CheckboxDefaultHeight, Constants.CheckboxDefaultHeight))
+
+
+        public UICheckbox()
+            :this( new CGRect(0, 0, Constants.DefaultHeight, Constants.DefaultHeight))
         {
         }
 
-        public M13Checkbox(CGRect frame)
+        public UICheckbox(CGRect frame)
             : base(frame)
         {
             Setup();
         }
 
-        public M13Checkbox(NSCoder coder)
+        public UICheckbox(NSCoder coder)
             : base(coder)
         {
             Setup();
@@ -90,8 +91,8 @@ namespace Messier16.Forms.iOS.Controls
             ClipsToBounds = false;
             BackgroundColor = UIColor.Clear;
             Radius =  Constants.BoxRadius * heightForCheckbox;
-            CheckAlignment = CheckAlignment.Right;
-            CheckState = CheckState.Unchecked;
+            CheckAlignment = CheckboxAlignment.Right;
+            CheckState = CheckboxState.Unchecked;
             Enabled = true;
 
             // Create the check view
@@ -104,7 +105,7 @@ namespace Messier16.Forms.iOS.Controls
 
             CheckView = new CheckView(checkViewFrame);
             CheckView.Checkbox = this;
-            CheckView.Selected = false;
+            CheckView.IsSelected = false;
             CheckView.BackgroundColor = UIColor.Clear;
             CheckView.ClipsToBounds = false;
             CheckView.UserInteractionEnabled = false;
@@ -230,11 +231,11 @@ namespace Messier16.Forms.iOS.Controls
             //                [self layoutSubviews];
         }
 
-        void LayoutSubviews()
+        new void LayoutSubviews()
         {
             base.LayoutSubviews();
             var heightForCheckbox = HeightForCheckbox();
-            if (CheckAlignment == CheckAlignment.Right)
+            if (CheckAlignment == CheckboxAlignment.Right)
             {     
                 CheckView.Frame = new CGRect(
                     (TitleLabel.Text.Length == 0 ? 0 : Frame.Size.Width - (( Constants.BoxSize +  Constants.CheckHorizontalExtention) * heightForCheckbox)),
@@ -265,25 +266,25 @@ namespace Messier16.Forms.iOS.Controls
 
         public delegate void CheckedChangedEventHandler(object sender, CheckedChangedEventArgs args);
         public event CheckedChangedEventHandler CheckedChanged;
-        public void SetCheckState(CheckState checkState)
+        public void SetCheckState(CheckboxState checkState)
         {
             CheckState = checkState;
             if (CheckedChanged != null)
             {
-                CheckedChanged(this, new CheckedChangedEventArgs(CheckState == CheckState.Checked));
+                CheckedChanged(this, new CheckedChangedEventArgs(CheckState == CheckboxState.Checked));
             }
             CheckView.SetNeedsDisplay();
         }
 
         void ToggleCheckState()
         {
-            if (CheckState == CheckState.Unchecked)
+            if (CheckState == CheckboxState.Unchecked)
             {
-                SetCheckState(CheckState.Checked);
+                SetCheckState(CheckboxState.Checked);
             }
-            else if(CheckState == CheckState.Checked)
+            else if(CheckState == CheckboxState.Checked)
             {
-                SetCheckState(CheckState.Unchecked);
+                SetCheckState(CheckboxState.Unchecked);
             }
         }
 
@@ -340,45 +341,45 @@ namespace Messier16.Forms.iOS.Controls
         //            return checkView.frame;
         //        }
 
-//        public override bool BeginTracking(UITouch uitouch, UIEvent uievent)
-//        {
-//            Debug.WriteLine("Tracking beg");
-//            base.BeginTracking(uitouch, uievent);
-//            CheckView.IsSelected = true;
-//            CheckView.SetNeedsDisplay();
-//            return true;
-//        }
-//
-//
-//        public override bool ContinueTracking(UITouch uitouch, UIEvent uievent)
-//        {
-//            Debug.WriteLine("Tracking cont");
-//            base.ContinueTracking(uitouch, uievent);
-//            return true;
-//        }
-//
-//        public override void EndTracking(UITouch uitouch, UIEvent uievent)
-//        {
-//            Debug.WriteLine("Tracking ended");
-//            CheckView.IsSelected = false;
-//            ToggleCheckState();
-//            SendActionForControlEvents(UIControlEvent.ValueChanged);
-//            // [self sendActionsForControlEvents:UIControlEventValueChanged];
-//            base.EndTracking(uitouch, uievent);
-//        }
-//
-//
-//        public override void CancelTracking(UIEvent uievent)
-//        {
-//            Debug.WriteLine("Tracking cancelled");
-//            CheckView.IsSelected = false;
-//            CheckView.SetNeedsDisplay();
-//            base.CancelTracking(uievent);
-//        }
+        //        public override bool BeginTracking(UITouch uitouch, UIEvent uievent)
+        //        {
+        //            Debug.WriteLine("Tracking beg");
+        //            base.BeginTracking(uitouch, uievent);
+        //            CheckView.IsSelected = true;
+        //            CheckView.SetNeedsDisplay();
+        //            return true;
+        //        }
+        //
+        //
+        //        public override bool ContinueTracking(UITouch uitouch, UIEvent uievent)
+        //        {
+        //            Debug.WriteLine("Tracking cont");
+        //            base.ContinueTracking(uitouch, uievent);
+        //            return true;
+        //        }
+        //
+        //        public override void EndTracking(UITouch uitouch, UIEvent uievent)
+        //        {
+        //            Debug.WriteLine("Tracking ended");
+        //            CheckView.IsSelected = false;
+        //            ToggleCheckState();
+        //            SendActionForControlEvents(UIControlEvent.ValueChanged);
+        //            // [self sendActionsForControlEvents:UIControlEventValueChanged];
+        //            base.EndTracking(uitouch, uievent);
+        //        }
+        //
+        //
+        //        public override void CancelTracking(UIEvent uievent)
+        //        {
+        //            Debug.WriteLine("Tracking cancelled");
+        //            CheckView.IsSelected = false;
+        //            CheckView.SetNeedsDisplay();
+        //            base.CancelTracking(uievent);
+        //        }
 
         UIColor LabelColor{ get; set; }
 
-        float _checkHeight;
+        //float _checkHeight;
 
         UILabel TitleLabel { get; set; }
 
@@ -390,15 +391,15 @@ namespace Messier16.Forms.iOS.Controls
 
         public CheckView CheckView { get; set; }
 
-        public CheckState CheckState { get; set; }
+        public CheckboxState CheckState { get; set; }
 
-        public CheckAlignment CheckAlignment { get; set; }
+        public CheckboxAlignment CheckAlignment { get; set; }
 
         public UIColor UncheckedColor { get; set; }
 
         public System.nfloat Radius { get; set; }
 
-        private CGRect _boxFrame;
+        //private CGRect _boxFrame;
 
     }
 }

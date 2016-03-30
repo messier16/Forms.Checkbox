@@ -1,10 +1,10 @@
-// ***********************************************************************
-// Assembly         : XLabs.Forms.Droid
+﻿// ***********************************************************************
+// Assembly         : Messier16.Forms.Droid.Controls
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 
-// Last Modified By : XLabs Team
-// Last Modified On : 01-04-2016
+// Last Modified By : Antonio Feregrino
+// Last Modified On : 03-27-2016
 // ***********************************************************************
 // <copyright file="CheckBoxRenderer.cs" company="XLabs Team">
 //     Copyright (c) XLabs Team. All rights reserved.
@@ -19,14 +19,13 @@
 // ***********************************************************************
 // 
 
-using System;
 using System.ComponentModel;
 using Android.Content.Res;
-using Android.Graphics;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Messier16.Forms.Controls;
 using Messier16.Forms.Droid.Controls;
+using System;
 
 [assembly: ExportRenderer(typeof(Checkbox), typeof(CheckboxRenderer))]
 namespace Messier16.Forms.Droid.Controls
@@ -36,7 +35,13 @@ namespace Messier16.Forms.Droid.Controls
     /// </summary>
     public class CheckboxRenderer : ViewRenderer<Checkbox, Android.Widget.CheckBox>
     {
-        private ColorStateList defaultTextColor;
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public static void Init()
+        {
+            var temp = DateTime.Now;
+        }
 
         /// <summary>
         /// Called when [element changed].
@@ -50,9 +55,13 @@ namespace Messier16.Forms.Droid.Controls
             {
                 var checkBox = new Android.Widget.CheckBox(this.Context);
                 checkBox.CheckedChange += CheckBoxCheckedChange;
+                SetNativeControl(checkBox);
+            }
 
-                defaultTextColor = checkBox.TextColors;
-                this.SetNativeControl(checkBox);
+            if (e.NewElement != null)
+            {
+                Control.Checked = e.NewElement.Checked;
+                Control.Enabled = e.NewElement.IsEnabled;
             }
         }
 

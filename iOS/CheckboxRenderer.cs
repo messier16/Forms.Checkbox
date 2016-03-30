@@ -18,6 +18,14 @@ namespace Messier16.Forms.iOS.Controls
     /// </summary>
     public class CheckboxRenderer : ViewRenderer<Checkbox, M13Checkbox>
     {
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public new static void Init()
+        {
+            var temp = DateTime.Now;
+        }
+        
         private CGRect _originalBounds;
 
         /// <summary>
@@ -36,7 +44,12 @@ namespace Messier16.Forms.iOS.Controls
             {
                 if (Control == null)
                 {
+<<<<<<< HEAD:Test app/iOS/Checkbox/CheckboxRenderer.cs
                     var checkBox = new M13Checkbox();
+=======
+                    var checkBox = new UICheckbox();
+                    checkBox.Bounds = new CGRect(0, 0, Element.Width, Element.Height);
+>>>>>>> origin/master:iOS/CheckboxRenderer.cs
                     checkBox.CheckedChanged += (s, args) => Element.Checked = args.Checked;
                     SetNativeControl(checkBox);
 
@@ -44,27 +57,19 @@ namespace Messier16.Forms.iOS.Controls
                     _originalBounds = checkBox.Bounds;
                 }
                 Control.SetCheckState(e.NewElement.Checked
-                    ? CheckState.Checked : CheckState.Unchecked);
+                    ? CheckboxState.Checked : CheckboxState.Unchecked);
                 Control.SetEnabled(e.NewElement.IsEnabled);
                 Control.Bounds = _originalBounds;
             }
         }
 
-#if DEBUG
+        #if DEBUG
         private string GetBounds(CGRect rect)
         {
             return String.Format(" X:{0} Y:{1} H:{2} W:{3}", rect.X, rect.Y, rect.Height, rect.Width);
         }
-#endif
+        #endif
 
-        //        /// <summary>
-        //        /// Draws the specified rect.
-        //        /// </summary>
-        //        /// <param name="rect">The rect.</param>
-        //        public override void Draw(CoreGraphics.CGRect rect)
-        //        {
-        //            base.Draw(rect);
-        //        }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -78,7 +83,7 @@ namespace Messier16.Forms.iOS.Controls
                     Control.SetEnabled(Element.IsEnabled);
                     break;
                 case "Checked":
-                    Control.SetCheckState(Element.Checked ? CheckState.Checked : CheckState.Unchecked);
+                    Control.SetCheckState(Element.Checked ? CheckboxState.Checked : CheckboxState.Unchecked);
                     break;
 
             }

@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Core
+// Assembly         : Messier16.Forms.Controls
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 
-// Last Modified By : XLabs Team
-// Last Modified On : 01-04-2016
+// Last Modified By : Antonio Feregrino
+// Last Modified On : 03-27-2016
 // ***********************************************************************
 // <copyright file="EventArgs{T}.cs" company="XLabs Team">
 //     Copyright (c) XLabs Team. All rights reserved.
@@ -27,20 +27,20 @@ namespace Messier16.Forms.Controls
     /// Generic event argument class
     /// </summary>
     /// <typeparam name="T">Type of the argument</typeparam>
-    public class EventArgs<T> : EventArgs
+    public class CheckedChangedEventArgs : EventArgs
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EventArgs"/> class.
         /// </summary>
-        /// <param name="value">Value of the argument</param>
-        public EventArgs(T value)
+        /// <param name = "chkd"></param>
+        public CheckedChangedEventArgs(bool chkd)
         {
-            this.Value = value;
+            this.IsChecked = chkd;
         }
 
         /// <summary>
         /// Gets the value of the event argument
         /// </summary>
-        public T Value { get; private set; }
+        public bool IsChecked { get; private set; }
     }
 }

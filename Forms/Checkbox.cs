@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Forms
+// Assembly         : Messier16.Forms.Controls
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 
-// Last Modified By : XLabs Team
-// Last Modified On : 01-04-2016
+// Last Modified By : Antonio Feregrino
+// Last Modified On : 03-27-2016
 // ***********************************************************************
 // <copyright file="CheckBox.cs" company="XLabs Team">
 //     Copyright (c) XLabs Team. All rights reserved.
@@ -38,7 +38,7 @@ namespace Messier16.Forms.Controls
                 typeof(Checkbox),
                 false, BindingMode.TwoWay, propertyChanged: OnCheckedPropertyChanged);
 
-#if DEBUG
+        #if DEBUG
         /// <summary>
         /// The checked state property.
         /// </summary>
@@ -64,7 +64,7 @@ namespace Messier16.Forms.Controls
                 SetValue(TestProperty, value);
             }
         }
-#endif
+        #endif
 
         /// <summary>
         /// Gets or sets a value indicating whether the control is checked.
@@ -83,7 +83,7 @@ namespace Messier16.Forms.Controls
                 {
                     SetValue(CheckedProperty, value);
                     if (CheckedChanged != null)
-                        CheckedChanged.Invoke(this, new EventArgs<bool>(value));
+                        CheckedChanged.Invoke(this, new CheckedChangedEventArgs(value));
                 }
             }
         }
@@ -91,7 +91,7 @@ namespace Messier16.Forms.Controls
         /// <summary>
         /// The checked changed event.
         /// </summary>
-        public event EventHandler<EventArgs<bool>> CheckedChanged;
+        public event EventHandler<CheckedChangedEventArgs> CheckedChanged;
 
         /// <summary>
         /// Called when [checked property changed].
