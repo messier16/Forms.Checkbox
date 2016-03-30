@@ -11,7 +11,7 @@ namespace Messier16.Forms.iOS.Controls
     [Register("CheckView")]
     public class CheckView : UIView
     {
-        public UICheckbox Checkbox { get; set; }
+        public M13Checkbox Checkbox { get; set; }
 
         public bool Selected { get; set; }
 

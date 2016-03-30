@@ -9,24 +9,24 @@ using System.Diagnostics;
 namespace Messier16.Forms.iOS.Controls
 {
 
-    [Register("UICheckbox")]
-    public class UICheckbox : UIControl
+    [Register("M13Checkbox")]
+    public class M13Checkbox : UIControl
     {
 
 
 
-        public UICheckbox()
+        public M13Checkbox()
             :this( new CGRect(0, 0, Constants.CheckboxDefaultHeight, Constants.CheckboxDefaultHeight))
         {
         }
 
-        public UICheckbox(CGRect frame)
+        public M13Checkbox(CGRect frame)
             : base(frame)
         {
             Setup();
         }
 
-        public UICheckbox(NSCoder coder)
+        public M13Checkbox(NSCoder coder)
             : base(coder)
         {
             Setup();
