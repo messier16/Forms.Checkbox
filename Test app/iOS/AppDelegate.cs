@@ -25,6 +25,7 @@ namespace CheckboxTestApp.iOS
                     e.NativeView.AccessibilityIdentifier = e.View.StyleId;
                 }
             };
+
             // requires Xamarin Test Cloud Agent
             Xamarin.Calabash.Start();
 #endif

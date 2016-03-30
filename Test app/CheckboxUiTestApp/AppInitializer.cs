@@ -17,8 +17,12 @@ namespace CheckboxUiTestApp
                     .StartApp();
             }
 
+			var simulatorId = "A48759EA-A2F7-44F9-8EE6-5AB3AA374721";
+
             return ConfigureApp
-                .iOS
+				.iOS.DeviceIdentifier(simulatorId)
+				.AppBundle("../../../iOS/bin/iPhoneSimulator/Debug/CheckboxTestAppiOS.app")
+
                 .StartApp();
         }
     }
