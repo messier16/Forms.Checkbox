@@ -11,9 +11,9 @@ namespace Messier16.Forms.iOS.Controls
     [Register("CheckView")]
     public class CheckView : UIView
     {
-        public UICheckbox Checkbox { get; set; }
+        public M13Checkbox Checkbox { get; set; }
 
-        public bool IsSelected { get; set; }
+        public bool Selected { get; set; }
 
         public CheckView(CGRect frame)
             : base(frame)
@@ -38,18 +38,14 @@ namespace Messier16.Forms.iOS.Controls
                 UIColor strokeColor = null;
                 UIColor checkColor = null;
 
-                if (Checkbox.CheckState == CheckState.Unchecked)
-                {
+                if (Checkbox.CheckState == CheckState.Unchecked) {
                     fillColor = Checkbox.UncheckedColor;
-                }
-                else
-                {
+                } else {
                     fillColor = Checkbox.TintColor;
                 }
 
                 System.nfloat r, g, b, a;
-                if (IsSelected)
-                {
+                if (Selected)  {
                     fillColor.GetRGBA(out r, out g, out b, out a);
                 }
 
