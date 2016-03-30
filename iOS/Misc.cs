@@ -21,18 +21,18 @@ namespace Messier16.Forms.iOS.Controls
         public const float M13CheckboxHeightAutomatic = float.MaxValue;
     }
 
-    public enum CheckAlignment
+    public enum CheckboxAlignment
     {
         Right,
         Left,
         Center
     }
 
-    public enum CheckState
+    public enum CheckboxState
     {
         Unchecked,
         Checked,
-        //        Mixed
+        Mixed
     }
 }
 

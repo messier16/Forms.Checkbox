@@ -91,8 +91,8 @@ namespace Messier16.Forms.iOS.Controls
             ClipsToBounds = false;
             BackgroundColor = UIColor.Clear;
             Radius =  Constants.BoxRadius * heightForCheckbox;
-            CheckAlignment = CheckAlignment.Right;
-            CheckState = CheckState.Unchecked;
+            CheckAlignment = CheckboxAlignment.Right;
+            CheckState = CheckboxState.Unchecked;
             Enabled = true;
 
             // Create the check view
@@ -235,7 +235,7 @@ namespace Messier16.Forms.iOS.Controls
         {
             base.LayoutSubviews();
             var heightForCheckbox = HeightForCheckbox();
-            if (CheckAlignment == CheckAlignment.Right)
+            if (CheckAlignment == CheckboxAlignment.Right)
             {     
                 CheckView.Frame = new CGRect(
                     (TitleLabel.Text.Length == 0 ? 0 : Frame.Size.Width - (( Constants.BoxSize +  Constants.CheckHorizontalExtention) * heightForCheckbox)),
@@ -266,25 +266,25 @@ namespace Messier16.Forms.iOS.Controls
 
         public delegate void CheckedChangedEventHandler(object sender, CheckedChangedEventArgs args);
         public event CheckedChangedEventHandler CheckedChanged;
-        public void SetCheckState(CheckState checkState)
+        public void SetCheckState(CheckboxState checkState)
         {
             CheckState = checkState;
             if (CheckedChanged != null)
             {
-                CheckedChanged(this, new CheckedChangedEventArgs(CheckState == CheckState.Checked));
+                CheckedChanged(this, new CheckedChangedEventArgs(CheckState == CheckboxState.Checked));
             }
             CheckView.SetNeedsDisplay();
         }
 
         void ToggleCheckState()
         {
-            if (CheckState == CheckState.Unchecked)
+            if (CheckState == CheckboxState.Unchecked)
             {
-                SetCheckState(CheckState.Checked);
+                SetCheckState(CheckboxState.Checked);
             }
-            else if(CheckState == CheckState.Checked)
+            else if(CheckState == CheckboxState.Checked)
             {
-                SetCheckState(CheckState.Unchecked);
+                SetCheckState(CheckboxState.Unchecked);
             }
         }
 
@@ -391,9 +391,9 @@ namespace Messier16.Forms.iOS.Controls
 
         public CheckView CheckView { get; set; }
 
-        public CheckState CheckState { get; set; }
+        public CheckboxState CheckState { get; set; }
 
-        public CheckAlignment CheckAlignment { get; set; }
+        public CheckboxAlignment CheckAlignment { get; set; }
 
         public UIColor UncheckedColor { get; set; }
 

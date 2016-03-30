@@ -38,7 +38,7 @@ namespace Messier16.Forms.iOS.Controls
                 UIColor strokeColor = null;
                 UIColor checkColor = null;
 
-                if (Checkbox.CheckState == CheckState.Unchecked)
+                if (Checkbox.CheckState == CheckboxState.Unchecked)
                 {
                     fillColor = Checkbox.UncheckedColor;
                 }
@@ -90,9 +90,9 @@ namespace Messier16.Forms.iOS.Controls
 
                 switch (Checkbox.CheckState)
                 {
-                    case CheckState.Unchecked:
+                    case CheckboxState.Unchecked:
                         break;
-                    case CheckState.Checked:
+                    case CheckboxState.Checked:
                         checkColor.SetFill();
                         Checkbox.DefaultShape.Fill();
                         break;

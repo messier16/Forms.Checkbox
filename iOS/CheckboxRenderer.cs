@@ -53,7 +53,7 @@ namespace Messier16.Forms.iOS.Controls
                     _originalBounds = checkBox.Bounds;
                 }
                 Control.SetCheckState(e.NewElement.Checked
-                    ? CheckState.Checked : CheckState.Unchecked);
+                    ? CheckboxState.Checked : CheckboxState.Unchecked);
                 Control.SetEnabled(e.NewElement.IsEnabled);
                 Control.Bounds = _originalBounds;
             }
@@ -79,7 +79,7 @@ namespace Messier16.Forms.iOS.Controls
                     Control.SetEnabled(Element.IsEnabled);
                     break;
                 case "Checked":
-                    Control.SetCheckState(Element.Checked ? CheckState.Checked : CheckState.Unchecked);
+                    Control.SetCheckState(Element.Checked ? CheckboxState.Checked : CheckboxState.Unchecked);
                     break;
 
             }
