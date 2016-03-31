@@ -54,12 +54,16 @@ namespace Messier16.Forms.Droid.Controls
             if (this.Control == null)
             {
                 var checkBox = new Android.Widget.CheckBox(this.Context);
+                checkBox.SetHeight((int)Element.HeightRequest);
+                checkBox.SetWidth((int)Element.WidthRequest);
                 checkBox.CheckedChange += CheckBoxCheckedChange;
                 SetNativeControl(checkBox);
             }
 
             if (e.NewElement != null)
             {
+                Control.SetHeight((int)Element.HeightRequest);
+                Control.SetWidth((int)Element.WidthRequest);
                 Control.Checked = e.NewElement.Checked;
                 Control.Enabled = e.NewElement.IsEnabled;
             }

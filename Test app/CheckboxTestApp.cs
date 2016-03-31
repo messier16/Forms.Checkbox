@@ -11,10 +11,10 @@ namespace CheckboxTestApp
         public App()
         {
 
-			var cb1 = new Checkbox() { HeightRequest = 23, WidthRequest = 23, StyleId = "check1" } ;
-            var cb2 = new Checkbox() { HeightRequest = 23, WidthRequest = 23, IsEnabled = false, StyleId = "check2"};
-            var cb3 = new Checkbox() { HeightRequest = 23, WidthRequest = 23, Checked = true , StyleId = "check3"};
-			var cb4 = new Checkbox() { HeightRequest = 23, WidthRequest = 23 };
+			var cb1 = new Checkbox() { HeightRequest = 25, WidthRequest = 25, StyleId = "check1" } ;
+            var cb2 = new Checkbox() { HeightRequest = 25, WidthRequest = 25, IsEnabled = false, StyleId = "check2"};
+            var cb3 = new Checkbox() { HeightRequest = 25, WidthRequest = 25, Checked = true , StyleId = "check3"};
+			var cb4 = new Checkbox() { HeightRequest = 25, WidthRequest = 25 };
 
             cb1.CheckedChanged += 
                 (sender, e) =>
