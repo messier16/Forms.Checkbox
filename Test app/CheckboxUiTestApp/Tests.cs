@@ -30,6 +30,12 @@ namespace CheckboxUiTestApp
         {
             app.Screenshot("First screen.");
         }
+
+        [Test]
+        public void Repl()
+        {
+            app.Repl();
+        }
     }
 }
 

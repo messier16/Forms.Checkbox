@@ -14,6 +14,8 @@ namespace CheckboxUiTestApp
             {
                 return ConfigureApp
                     .Android
+                    .Debug()
+                    .ApkFile(@"C:\Users\fferegrino\Documents\GitHub\Forms.Checkbox\Test app\Droid\bin\Release\com.thatcsharpguy.checkboxtestapp.apk")
                     .StartApp();
             }
 
