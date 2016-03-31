@@ -33,6 +33,13 @@
     <Compile Include="CheckboxTestApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectableCell.cs" />
+    <Compile Include="DummyViewModel.cs" />
+    <Compile Include="CodePage.cs" />
+    <Compile Include="XamlPage.xaml.cs">
+      <DependentUpon>XamlPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectableItem.cs" />
+    <Compile Include="InverseBooleanConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -55,5 +62,10 @@
       <Project>{770BCDAD-C70F-4EE3-B4C1-7276D1AF1D6E}</Project>
       <Name>Forms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="XamlPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

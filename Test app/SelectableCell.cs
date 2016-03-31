@@ -14,7 +14,10 @@ namespace CheckboxTestApp
             BindableProperty.Create("CheckboxEnabled", typeof(bool), typeof(SelectableCell), true);
 
         public static readonly BindableProperty CheckboxVisibleProperty =
-            BindableProperty.Create("CellEnabled", typeof(bool), typeof(SelectableCell), true);
+            BindableProperty.Create("CheckboxVisible", typeof(bool), typeof(SelectableCell), true);
+
+        public static readonly BindableProperty CheckboxCheckedProperty =
+            BindableProperty.Create("CheckboxChecked", typeof(bool), typeof(SelectableCell), true);
 
         public string Text
         {
@@ -34,36 +37,14 @@ namespace CheckboxTestApp
             set { SetValue(CheckboxVisibleProperty, value); }
         }
 
+        public bool CheckboxChecked
+        {
+            get { return (bool)GetValue(CheckboxCheckedProperty); }
+            set { SetValue(CheckboxCheckedProperty, value); }
+        }
+
         Label lbName;
         Checkbox cb;
-
-#if DEBUG
-        /// <summary>
-        /// The checked state property.
-        /// </summary>
-        public static readonly BindableProperty TestProperty =
-            BindableProperty.Create("Test",
-                typeof(string),
-                typeof(SelectableCell),
-                "Test", BindingMode.TwoWay);
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the control is checked.
-        /// </summary>
-        /// <value>The checked state.</value>
-        public string Test
-        {
-            get
-            {
-                return (string)GetValue(TestProperty);
-            }
-
-            set
-            {
-                SetValue(TestProperty, value);
-            }
-        }
-#endif
 
         public SelectableCell()
         {
@@ -95,7 +76,6 @@ namespace CheckboxTestApp
             cb.WidthRequest = 30;
             cellWrapper.Children.Add(cb, 0, 0);
             cb.IsEnabled = false;
-            cb.SetBinding(Checkbox.CheckedProperty, "IsSelected");
             cellWrapper.Children.Add(infoLayout, 1, 0);
 
             View = cellWrapper;
@@ -110,9 +90,7 @@ namespace CheckboxTestApp
                 lbName.Text = Text;
                 cb.IsEnabled = CheckboxEnabled;
                 cb.IsVisible = CheckboxVisible;
-#if DEBUG
-                cb.Test = Test;
-#endif
+                cb.Checked = CheckboxChecked;
             }
         }
     }

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:m16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls.Checkbox" 
+	xmlns:cells="clr-namespace:CheckboxTestApp" 
+	xmlns:converters="clr-namespace:XLabs.Forms.Converter" 
+	x:Class="CheckboxTestApp.XamlPage"
+	Title="Xaml Page">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<converters:InverseBooleanConverter x:Key="BoolInverter"></converters:InverseBooleanConverter>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+
+	<StackLayout>
+		<StackLayout Orientation="Horizontal">
+			<m16:Checkbox WidthRequest="55" Checked="{Binding Check1}"></m16:Checkbox>
+			<m16:Checkbox WidthRequest="45" Checked="{Binding Check2}" IsEnabled="{Binding Check1}"></m16:Checkbox>
+			<m16:Checkbox WidthRequest="35" Checked="{Binding Check1, Mode=OneWay, Converter={StaticResource BoolInverter}}" ></m16:Checkbox>
+			<m16:Checkbox IsVisible="{Binding Check2}"></m16:Checkbox>
+		</StackLayout>
+		<ListView ItemsSource="{Binding Items}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<cells:SelectableCell 
+						Text="{Binding Text}"
+						CheckboxEnabled="{Binding IsSelectable}"
+						CheckboxVisible="{Binding IsVisible}"
+						CheckboxChecked="{Binding IsChecked}"></cells:SelectableCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+
+
+	</ContentPage.Content>
+</ContentPage>
