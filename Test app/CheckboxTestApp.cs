@@ -12,7 +12,7 @@ namespace CheckboxTestApp
         {
 
             // The root page of your application
-            MainPage = new NavigationPage( new XamlPage());
+            MainPage = new NavigationPage( new CodePage());
         }
 
     }

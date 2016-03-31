@@ -10,7 +10,7 @@ namespace CheckboxTestApp
     {
         public CodePage()
         {
-            Title = "Checkboxes";
+            Title = "Code Page";
 
             var cb1 = new Checkbox() { WidthRequest = 55, StyleId = "check1" };
             var cb2 = new Checkbox() { WidthRequest = 45, IsEnabled = false, StyleId = "check2" };
