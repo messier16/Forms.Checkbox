@@ -14,10 +14,14 @@ namespace CheckboxTestApp.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+
+            #if ENABLE_TEST_CLOUD
+
+            // requires Xamarin Test Cloud Agent
+            Xamarin.Calabash.Start();
+            #endif
             global::Xamarin.Forms.Forms.Init();
 
-            CheckboxRenderer.Init();
-#if ENABLE_TEST_CLOUD
             Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
                 // http://developer.xamarin.com/recipes/testcloud/set-accessibilityidentifier-ios/
                 if (null != e.View.StyleId)
@@ -26,9 +30,7 @@ namespace CheckboxTestApp.iOS
                 }
             };
 
-            // requires Xamarin Test Cloud Agent
-            Xamarin.Calabash.Start();
-#endif
+            CheckboxRenderer.Init();
 
             LoadApplication(new App());
 

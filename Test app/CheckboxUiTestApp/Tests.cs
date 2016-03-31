@@ -36,6 +36,17 @@ namespace CheckboxUiTestApp
         {
             app.Repl();
         }
+
+        [Test]
+        public void TapCheck1()
+        {
+            app.Tap(c=>c.Marked("check1"));
+
+            var check2 = app.Query("check2").First();
+            Assert.IsTrue(check2.Enabled);
+        }
+
+
     }
 }
 
