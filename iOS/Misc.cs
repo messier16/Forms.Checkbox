@@ -15,7 +15,7 @@ namespace Messier16.Forms.iOS.Controls
         public const float CheckBoxSpacing = 0.3125f;
         public const float M13CheckboxMaxFontSize = 100.0f;
 
-        public const float CheckboxDefaultHeight = 24.0f;
+        public const float CheckboxDefaultHeight = 25.0f;
         public const float BoxRadius = 0.1875f;
         public const float BoxStrokeWidth = 0.05f;
         public const float M13CheckboxHeightAutomatic = float.MaxValue;

@@ -12,9 +12,6 @@ namespace Messier16.Forms.iOS.Controls
     [Register("M13Checkbox")]
     public class M13Checkbox : UIControl
     {
-
-
-
         public M13Checkbox()
             :this( new CGRect(0, 0, Constants.CheckboxDefaultHeight, Constants.CheckboxDefaultHeight))
         {
@@ -138,7 +135,7 @@ namespace Messier16.Forms.iOS.Controls
         {
             //See if the checkbox's height is automatic, and return the proper size
             //            return System.Math.Abs(_checkHeight - M13CheckboxHeightAutomatic) < 0.2 ? Frame.Size.Height : _checkHeight;
-            return Frame.Size.Height;
+            return Bounds.Size.Width;
         }
 
         private UIBezierPath _defaultShape;

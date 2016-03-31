@@ -91,8 +91,8 @@ namespace CheckboxTestApp
                 };
 
             cb = new Checkbox();
-            cb.HeightRequest = 23;
-            cb.WidthRequest = 23;
+            //cb.HeightRequest = 25;
+            cb.WidthRequest = 30;
             cellWrapper.Children.Add(cb, 0, 0);
             cb.IsEnabled = false;
             cb.SetBinding(Checkbox.CheckedProperty, "IsSelected");

@@ -25,7 +25,7 @@ namespace Messier16.Forms.iOS.Controls
         {
             var temp = DateTime.Now;
         }
-        
+
         private CGRect _originalBounds;
 
         /// <summary>
@@ -44,8 +44,13 @@ namespace Messier16.Forms.iOS.Controls
             {
                 if (Control == null)
                 {
-                    var checkBox = new M13Checkbox();
-                    checkBox.Bounds = new CGRect(0, 0, Element.Width, Element.Height);
+                    var width = (double)Constants.CheckboxDefaultHeight;
+                    if (Element.WidthRequest >= 0)
+                    {
+                        width = Element.WidthRequest;
+                    }
+                    var checkBox = new M13Checkbox(new CGRect(0, 0, width, width));
+                    checkBox.Bounds = new CGRect(0, 0, width, width);
                     checkBox.CheckedChanged += (s, args) => Element.Checked = args.Checked;
                     SetNativeControl(checkBox);
 
@@ -59,12 +64,12 @@ namespace Messier16.Forms.iOS.Controls
             }
         }
 
-        #if DEBUG
+#if DEBUG
         private string GetBounds(CGRect rect)
         {
             return String.Format(" X:{0} Y:{1} H:{2} W:{3}", rect.X, rect.Y, rect.Height, rect.Width);
         }
-        #endif
+#endif
 
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
