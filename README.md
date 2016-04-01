@@ -42,4 +42,17 @@ cb1.CheckedChanged +=
 ```  
 
 #### XAML
-// Working on it (in the documentation, of course)!
+First, pull in the namespace:
+```
+xmlns:m16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls.Checkbox" 
+```
+
+Then, use it  
+```
+<m16:Checkbox WidthRequest="55" Checked="{Binding Check1}"></m16:Checkbox>
+<m16:Checkbox WidthRequest="45" Checked="{Binding Check2}" IsEnabled="{Binding Check1}"></m16:Checkbox>
+<m16:Checkbox WidthRequest="35" Checked="{Binding Check1, Mode=OneWay, Converter={StaticResource BoolInverter}}" ></m16:Checkbox>
+<m16:Checkbox IsVisible="{Binding Check2}"></m16:Checkbox>
+```  
+As you can see, the `Checked` property is bindable.
+
