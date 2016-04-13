@@ -19,6 +19,7 @@
 // ***********************************************************************
 // 
 
+using System;
 using Messier16.Forms.Controls;
 using Messier16.Forms.WinPhone.Controls;
 using System.ComponentModel;
@@ -36,6 +37,14 @@ namespace Messier16.Forms.WinPhone.Controls
     /// </summary>
     public class CheckboxRenderer : ViewRenderer<Checkbox, NativeCheckBox>
     {
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public new static void Init()
+        {
+            var temp = DateTime.Now;
+        }
+
         /// <summary>
         /// Called when [element changed].
         /// </summary>
