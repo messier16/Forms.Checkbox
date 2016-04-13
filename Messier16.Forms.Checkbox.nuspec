@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.8.1">
        <id>Messier16.Forms.Checkbox</id>
-       <version>0.1.0-alpha</version>
+       <version>0.2.0-alpha</version>
        <title>Checkbox Control Plugin for Xamarin.Forms</title>
        <authors>Antonio Feregrino Bolaños</authors>
        <owners>Antonio Feregrino Bolaños</owners>
@@ -16,7 +16,7 @@
            Built against: 2.0.0.0
        </description>
        <summary>Use a checkbox in your Xamarin.Forms projects! Ensure you call CheckboxRenderer.Init() on each platform!</summary>
-       <tags>xamarin, pcl, xam.pcl, android, xamarin.forms, ios</tags>
+       <tags>xamarin, pcl, xam.pcl, android, xamarin.forms, ios, Windows RT, UWO</tags>
        <dependencies>
          <dependency id="Xamarin.Forms" version="2.0.0.0" />
        </dependencies>
@@ -40,14 +40,12 @@
 	 -->
 
      <!--Win Phone RT-->
-	 <!-- 
-     <file src="ImageCircle.Forms.Plugin.WindowsPhoneRT\bin\Release\ImageCircle.Forms.Plugin.WindowsPhoneRT.dll" target="lib\wpa81\ImageCircle.Forms.Plugin.WindowsPhoneRT.dll" />
-     <file src="ImageCircle.Forms.Plugin.WindowsPhoneRT\bin\Release\ImageCircle.Forms.Plugin.WindowsPhoneRT.xml" target="lib\wpa81\ImageCircle.Forms.Plugin.WindowsPhoneRT.xml" />
-     <file src="ImageCircle.Forms.Plugin.WindowsPhoneRT\bin\Release\ImageCircle.Forms.Plugin.WindowsPhoneRT.pdb" target="lib\wpa81\ImageCircle.Forms.Plugin.WindowsPhoneRT.pdb" />
-     <file src="ImageCircle.Forms.Plugin.Abstractions\bin\Release\ImageCircle.Forms.Plugin.Abstractions.dll" target="lib\wpa81\ImageCircle.Forms.Plugin.Abstractions.dll" />
-     <file src="ImageCircle.Forms.Plugin.Abstractions\bin\Release\ImageCircle.Forms.Plugin.Abstractions.xml" target="lib\wpa81\ImageCircle.Forms.Plugin.Abstractions.xml" />
-     <file src="ImageCircle.Forms.Plugin.Abstractions\bin\Release\ImageCircle.Forms.Plugin.Abstractions.pdb" target="lib\wpa81\ImageCircle.Forms.Plugin.Abstractions.pdb" />
-	 -->
+		<file src="WinPhone\bin\Release\Messier16.Forms.WinPhone.Controls.Checkbox.dll" target="lib\wpa81\Messier16.Forms.WinPhone.Controls.Checkbox.dll" />
+		<!-- <file src="WinPhone\bin\Release\Messier16.Forms.WinPhone.Controls.Checkbox.xml" target="lib\wpa81\Messier16.Forms.WinPhone.Controls.Checkbox.xml" /> -->
+		<file src="WinPhone\bin\Release\Messier16.Forms.WinPhone.Controls.Checkbox.pdb" target="lib\wpa81\Messier16.Forms.WinPhone.Controls.Checkbox.pdb" />
+		<file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.dll" target="lib\wpa81\Messier16.Forms.Controls.Checkbox.dll" />
+		<file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.xml" target="lib\wpa81\Messier16.Forms.Controls.Checkbox.xml" />
+		<file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.pdb" target="lib\wpa81\Messier16.Forms.Controls.Checkbox.pdb" />
 
      <!--Win Store-->
 	 <!-- 
@@ -60,14 +58,12 @@
 	 -->
 
        <!--UWP-->
-	 <!-- 
-       <file src="ImageCircle.Forms.Plugin.UWP\bin\Release\ImageCircle.Forms.Plugin.UWP.dll" target="lib\UAP10\ImageCircle.Forms.Plugin.UWP.dll" />
-       <file src="ImageCircle.Forms.Plugin.UWP\bin\Release\ImageCircle.Forms.Plugin.UWP.xml" target="lib\UAP10\ImageCircle.Forms.Plugin.UWP.xml" />
-       <file src="ImageCircle.Forms.Plugin.UWP\bin\Release\ImageCircle.Forms.Plugin.UWP.pdb" target="lib\UAP10\ImageCircle.Forms.Plugin.UWP.pdb" />
-       <file src="ImageCircle.Forms.Plugin.Abstractions\bin\Release\ImageCircle.Forms.Plugin.Abstractions.dll" target="lib\UAP10\ImageCircle.Forms.Plugin.Abstractions.dll" />
-       <file src="ImageCircle.Forms.Plugin.Abstractions\bin\Release\ImageCircle.Forms.Plugin.Abstractions.xml" target="lib\UAP10\ImageCircle.Forms.Plugin.Abstractions.xml" />
-       <file src="ImageCircle.Forms.Plugin.Abstractions\bin\Release\ImageCircle.Forms.Plugin.Abstractions.pdb" target="lib\UAP10\ImageCircle.Forms.Plugin.Abstractions.pdb" />
-	 -->
+		<file src="Uwp\bin\Release\Messier16.Forms.Uwp.Controls.Checkbox.dll" target="lib\UAP10\Messier16.Forms.Uwp.Controls.Checkbox.dll" />
+		<!-- <file src="Uwp\bin\Release\Messier16.Forms.Uwp.Controls.Checkbox.xml" target="lib\UAP10\Messier16.Forms.Uwp.Controls.Checkbox.xml" /> -->
+		<file src="Uwp\bin\Release\Messier16.Forms.Uwp.Controls.Checkbox.pdb" target="lib\UAP10\Messier16.Forms.Uwp.Controls.Checkbox.pdb" />
+		<file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.dll" target="lib\UAP10\Messier16.Forms.Controls.Checkbox.dll" />
+		<file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.xml" target="lib\UAP10\Messier16.Forms.Controls.Checkbox.xml" />
+		<file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.pdb" target="lib\UAP10\Messier16.Forms.Controls.Checkbox.pdb" />
 
        <!--Xamarin.Android-->
      <file src="Droid\bin\Release\Messier16.Forms.Droid.Controls.Checkbox.dll" target="lib\MonoAndroid10\Messier16.Forms.Droid.Controls.Checkbox.dll" />
@@ -86,17 +82,10 @@
 	 
 	 
      <!--Xamarin.iOSUnified-->
-	 
      <file src="iOS\bin\Release\Messier16.Forms.iOS.Controls.Checkbox.dll" target="lib\Xamarin.iOS10\Messier16.Forms.iOS.Controls.Checkbox.dll" />
      <file src="iOS\bin\Release\Messier16.Forms.iOS.Controls.Checkbox.xml" target="lib\Xamarin.iOS10\Messier16.Forms.iOS.Controls.Checkbox.xml" />
      <file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.dll" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.Checkbox.dll" />
      <file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.xml" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.Checkbox.xml" />
-	 <!-- 
-     <file src="ImageCircle.Forms.Plugin.iOSUnified\bin\iPhone\Release\ImageCircle.Forms.Plugin.iOS.dll" target="lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll" />
-     <file src="ImageCircle.Forms.Plugin.iOSUnified\bin\iPhone\Release\ImageCircle.Forms.Plugin.iOS.xml" target="lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.xml" />
-     <file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.dll" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.Checkbox.dll" />
-     <file src="Forms\bin\Release\Messier16.Forms.Controls.Checkbox.xml" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.Checkbox.xml" />
-	 -->
       
    </files>
 </package>
