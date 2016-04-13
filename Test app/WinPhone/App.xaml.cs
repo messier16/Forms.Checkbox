@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Messier16.Forms.WinPhone.Controls;
+using Xamarin.Forms.Platform.WinRT;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -60,6 +62,10 @@ namespace CheckboxTestApp.WinPhone
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+
+                Xamarin.Forms.Forms.Init(e);
+                CheckboxRenderer.Init();
+
 
                 // TODO: change this value to a cache size that is appropriate for your application
                 rootFrame.CacheSize = 1;
