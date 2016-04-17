@@ -64,14 +64,6 @@ namespace Messier16.Forms.iOS.Controls
             }
         }
 
-#if DEBUG
-        private string GetBounds(CGRect rect)
-        {
-            return String.Format(" X:{0} Y:{1} H:{2} W:{3}", rect.X, rect.Y, rect.Height, rect.Width);
-        }
-#endif
-
-
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
