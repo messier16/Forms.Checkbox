@@ -1,3 +1,7 @@
+
+Please be aware that I no longer mantain this project, you should use the [Forms.Controls](https://github.com/messier16/Forms.Controls) instead
+======
+
 # Checkbox Control Plugin for Xamarin
 
 ![Messier16.Forms.Checkbox](http://i.imgur.com/eDsT8PC.png)
